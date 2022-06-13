@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Whale Song</title>
+</head>
+
+<body>
+	<script>
+		// let input = "I love you baby";
+		let input = prompt("What words would you like to sing to our Whale?", 'print your choice here');;
+		let vowels = ["a", "e", "i", "o", "u"];
+		let resultArray = [];
+
+		for (i = 0; i < input.length; i++) {
+			// console.log(i);
+			for (j = 0; j < vowels.length; j++) {
+				// console.log(j);
+				if (input[i] === vowels[j]) {
+					// console.log(input[i]);
+					resultArray.push(input[i]);
+				}
+			}
+			if (input[i] === 'e') {
+				resultArray.push(input[i]);
+			} else if (input[i] === 'u') {
+				resultArray.push(input[i]);
+			}
+		}
+		// console.log(resultArray);
+
+		let resultString = resultArray.join("");
+		resultString = resultString.toUpperCase();
+		alert("You sang: " + input)
+		alert("And the whale sings to you back: " + resultString + "\nIsn't it marvellous?")
+	</script>
+</body>
+
+</html>
