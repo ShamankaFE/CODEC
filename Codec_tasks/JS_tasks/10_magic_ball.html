@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Magic Eight Ball</title>
+</head>
+
+<body>
+	<script>
+		let userName = prompt("What is your name?");
+		userName !== '' ? alert(`Nice to meet you, ${userName}!`) : alert("Hello, Stranger!");
+
+		let userQuestion = prompt("What is your issue? What answer are you searching for?");
+		// console.log(`${userName}, you asked me about "${userQuestion}"`);
+		userName !== '' ? alert(`${userName}, you asked me about "${userQuestion}"`) : alert(`You asked me about "${userQuestion}"`);
+
+		// We need to generate a random number between 0 and 7. 
+		let randomNumber = Math.floor(Math.random() * 8);
+
+		let eightBall = "";
+		switch (randomNumber) {
+			case 0:
+				eightBall = 'It is certain';
+				break;
+			case 1:
+				eightBall = 'It is decidedly so';
+				break;
+			case 2:
+				eightBall = 'Reply hazy. Reload the page and try again';
+				break;
+			case 3:
+				eightBall = 'Cannot predict now';
+				break;
+			case 4:
+				eightBall = 'Do not count on it';
+				break;
+			case 5:
+				eightBall = 'My sources say no';
+				break;
+			case 6:
+				eightBall = 'Outlook not so good';
+				break;
+			case 7:
+				eightBall = 'Signs point to yes';
+				break;
+		}
+
+		userName !== '' ? alert(`${userName}, Magic 8 Ball answers you: "${eightBall}".`) : alert(`Your answer is: "${eightBall}".`);
+	</script>
+</body>
+
+</html>
