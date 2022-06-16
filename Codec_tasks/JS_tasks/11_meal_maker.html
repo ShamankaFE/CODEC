@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Meal Maker</title>
+</head>
+
+<body>
+	<script>
+		const menu = {
+			_meal: "",
+			_price: 0,
+			set meal(mealToCheck) {
+				if (typeof mealToCheck === "string") {
+					return (this._meal = mealToCheck);
+				}
+			},
+			set price(priceToCheck) {
+				if (typeof priceToCheck === "number") {
+					return (this._price = priceToCheck);
+				}
+			},
+			get todaysSpecial() {
+				if (this._meal && this._price) {
+					return `Today’s Special is your favourite ${this._meal} for just $${this._price}!`
+				} else {
+					return 'Meal or price was not set correctly!'
+				}
+			}
+		};
+
+		menu.meal = prompt("What is your fav meal?");
+		menu.price = parseInt(prompt("How much are you ready to pay for it?"));
+		console.log(menu);
+		alert(menu.todaysSpecial)
+	</script>
+</body>
+
+</html>

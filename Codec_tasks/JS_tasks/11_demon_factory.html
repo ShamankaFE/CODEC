@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demon Factory</title>
+</head>
+
+<body>
+	<script>
+		const demonFactory = (dName, dAge, dAction) => {
+			return {
+				dName,
+				dAge,
+				dAction,
+				sayHello() {
+					console.log(`Hello, I am ${dName}, ${dAge}, your Personal Demon, and I can ${dAction}`);
+				}
+			}
+		};
+
+		let inputDemon = confirm("Do you have your personal Demon?");
+
+		do {
+			dName = prompt("Tell us his name");
+			dAge = prompt("Tell us his age");
+			dAction = prompt("What is his superpower in 1 verb");
+
+			let yourDemon = demonFactory(dName, dAge, dAction);
+
+			alert(`We are pleased to get to know your ${dName} closer! At his age of ${dAge} he has definately mastered his art to ${dAction}.`);
+			console.log(yourDemon.sayHello());
+
+			inputDemon = confirm("Do you have another one Demon?");
+
+		} while (inputDemon);
+
+		alert("Thank you for your honest answers.");
+
+	</script>
+</body>
+
+</html>
