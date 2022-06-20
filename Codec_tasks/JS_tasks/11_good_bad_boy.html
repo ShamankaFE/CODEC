@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Good boy VS. bad boy</title>
+</head>
+
+<body>
+	<script>
+
+		const veggies = ['broccoli', 'spinach', 'cauliflower', 'broccoflower'];
+		const badAnswers = ['pizza! Now!', 'french fries from McDonalds. Bring it to me!', 'hamburger! No compromises!', 'ice-cream and don\'t scream!', 'right to choose what I want!']
+		const goodAnswers = ['I love you so much', 'it makes me healthy', 'I don\'t want to upset you', 'it is my fave food', 'I am vegetarian']
+
+		let sample = arr => {
+			return arr[Math.floor(Math.random() * arr.length)];
+		}
+
+		const politelyDecline = (veg) => {
+			console.log('- I hate your ' + veg + '. I want my ' + sample(badAnswers));
+		}
+
+		let declineEverything = arr => {
+			arr.forEach(politelyDecline);
+		}
+
+		console.log("What does a bad and unthankful boy answer to his caring Mother?")
+		declineEverything(veggies);
+
+
+		const acceptEverything = arr => {
+			for (let i = 0; i < arr.length; i++) {
+				console.log(`- Ok, I guess I will eat some ${arr[i]} because ${sample(goodAnswers)}.`)
+			}
+		}
+
+		console.log("What does a good boy say to keep your Mommy happy?")
+		acceptEverything(veggies);
+	</script>
+</body>
+
+</html>
